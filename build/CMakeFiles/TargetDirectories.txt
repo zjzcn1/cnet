@@ -1,4 +1,0 @@
-/Users/zjz/work/cpp/cnet/build/CMakeFiles/rebuild_cache.dir
-/Users/zjz/work/cpp/cnet/build/CMakeFiles/edit_cache.dir
-/Users/zjz/work/cpp/cnet/build/CMakeFiles/http_server.dir
-/Users/zjz/work/cpp/cnet/build/CMakeFiles/cnet.dir
