@@ -82,10 +82,6 @@ namespace cnet {
 
         virtual void enableSendfile(bool sendFile) override { _useSendfile = sendFile; }
 
-        virtual void enableGzip(bool useGzip) override { _useGzip = useGzip; }
-
-        virtual bool useGzip() const override { return _useGzip; }
-
         virtual void setStaticFilesCacheTime(int cacheTime) override { _staticFilesCacheTime = cacheTime; }
 
         virtual int staticFilesCacheTime() const override { return _staticFilesCacheTime; }
@@ -221,7 +217,6 @@ namespace cnet {
         std::string _logfileBaseName = "";
         size_t _logfileSize = 100000000;
         bool _useSendfile = true;
-        bool _useGzip = true;
         int _staticFilesCacheTime = 5;
         std::unordered_map<std::string, std::weak_ptr<HttpResponse>> _staticFilesCache;
         std::mutex _staticFilesCacheMutex;

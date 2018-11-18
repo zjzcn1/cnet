@@ -36,12 +36,9 @@
 
 namespace cnet {
 //the cnet banner
-    const char banner[] = "     _                             \n"
-                          "  __| |_ __ ___   __ _  ___  _ __  \n"
-                          " / _` | '__/ _ \\ / _` |/ _ \\| '_ \\ \n"
-                          "| (_| | | | (_) | (_| | (_) | | | |\n"
-                          " \\__,_|_|  \\___/ \\__, |\\___/|_| |_|\n"
-                          "                 |___/             \n";
+    const char banner[] = "                                    \n"
+                          "             CNET Http Server       \n"
+                          "                                    \n";
 
     class HttpApp : public cnet::NonCopyable {
     public:
@@ -148,10 +145,6 @@ namespace cnet {
                                 size_t logSize = 100000000) = 0;
 
         virtual void enableSendfile(bool sendFile) = 0;
-
-        virtual void enableGzip(bool useGzip) = 0;
-
-        virtual bool useGzip() const = 0;
 
         virtual void setStaticFilesCacheTime(int cacheTime) = 0;
 

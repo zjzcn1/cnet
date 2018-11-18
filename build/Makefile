@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named http_server
+
+# Build rule for target.
+http_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 http_server
+.PHONY : http_server
+
+# fast build rule for target.
+http_server/fast:
+	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/build
+.PHONY : http_server/fast
+
+#=============================================================================
 # Target rules for targets named cnet
 
 # Build rule for target.
@@ -122,6 +135,33 @@ cnet: cmake_check_build_system
 cnet/fast:
 	$(MAKE) -f CMakeFiles/cnet.dir/build.make CMakeFiles/cnet.dir/build
 .PHONY : cnet/fast
+
+examples/HttpMain.o: examples/HttpMain.cc.o
+
+.PHONY : examples/HttpMain.o
+
+# target to build an object file
+examples/HttpMain.cc.o:
+	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/examples/HttpMain.cc.o
+.PHONY : examples/HttpMain.cc.o
+
+examples/HttpMain.i: examples/HttpMain.cc.i
+
+.PHONY : examples/HttpMain.i
+
+# target to preprocess a source file
+examples/HttpMain.cc.i:
+	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/examples/HttpMain.cc.i
+.PHONY : examples/HttpMain.cc.i
+
+examples/HttpMain.s: examples/HttpMain.cc.s
+
+.PHONY : examples/HttpMain.s
+
+# target to generate assembly for a file
+examples/HttpMain.cc.s:
+	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/examples/HttpMain.cc.s
+.PHONY : examples/HttpMain.cc.s
 
 src/http/Cookie.o: src/http/Cookie.cc.o
 
@@ -1184,7 +1224,11 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... http_server"
 	@echo "... cnet"
+	@echo "... examples/HttpMain.o"
+	@echo "... examples/HttpMain.i"
+	@echo "... examples/HttpMain.s"
 	@echo "... src/http/Cookie.o"
 	@echo "... src/http/Cookie.i"
 	@echo "... src/http/Cookie.s"

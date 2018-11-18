@@ -62,13 +62,35 @@ aux_source_directory(src/tcp DIR_SRC)
 aux_source_directory(src/http DIR_SRC)
 aux_source_directory(src/utils DIR_SRC)
 
-add_library(${PROJECT_NAME} SHARED
-        ${DIR_SRC}
-        src/tcp/poller/PollPoller.cc
-        )
-###############################################################
-#add_executable(http_server
-#        examples/HttpMain.cc
-#        )
+find_package(OpenSSL)
+if (OpenSSL_FOUND)
+    include_directories(${OPENSSL_INCLUDE_DIR})
+    aux_source_directory(src/tcp/ssl DIR_SRC)
+endif ()
 
-#target_link_libraries(http_server ${PROJECT_NAME})
+if (CMAKE_SYSTEM_NAME MATCHES "Linux")
+    add_library(${PROJECT_NAME} SHARED
+            ${DIR_SRC}
+            ${PROJECT_SOURCE_DIR}/src/tcp/poller/EpollPoller.cc
+            )
+    message(STATUS "current platform: Linux ")
+elseif (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+    add_library(${PROJECT_NAME} SHARED
+            ${DIR_SRC}
+            ${PROJECT_SOURCE_DIR}/src/tcp/poller/PollPoller.cc
+            )
+    message(STATUS "current platform: MacOS")
+ELSE ()
+    message(FATAL_ERROR "not support platform: ${CMAKE_SYSTEM_NAME}")
+endif ()
+
+if (OpenSSL_FOUND)
+    link_libraries(${PROJECT_NAME} ${OPENSSL_LIBRARIES})
+endif ()
+
+###############################################################
+add_executable(http_server
+        examples/HttpMain.cc
+        )
+
+target_link_libraries(http_server ${PROJECT_NAME})

@@ -96,7 +96,7 @@ void HttpAppImpl::initRegex() {
     }
     if (regString.length() > 0)
         regString.resize(regString.length() - 1); //remove the last '|'
-    LOG_TRACE << "regex string:" << regString;
+    LOG_DEBUG << "regex string:" << regString;
     _ctrlRegex = std::regex(regString, std::regex_constants::icase);
 }
 
@@ -338,7 +338,7 @@ void HttpAppImpl::run() {
     std::vector<std::shared_ptr<EventLoopThread>> loopThreads;
     initRegex();
     for (auto listener : _listeners) {
-        LOG_TRACE << "thread num=" << _threadNum;
+        LOG_DEBUG << "thread num=" << _threadNum;
 #ifdef __linux__
         for (size_t i = 0; i < _threadNum; i++)
         {
@@ -457,7 +457,7 @@ void HttpAppImpl::doFilters(const std::vector<std::string> &filters,
                             bool needSetJsessionid,
                             const std::string &session_id,
                             const std::function<void()> &missCallback) {
-    LOG_TRACE << "filters count:" << filters.size();
+    LOG_DEBUG << "filters count:" << filters.size();
     std::shared_ptr<std::queue<std::shared_ptr<HttpFilterBase>>> filterPtrs =
             std::make_shared<std::queue<std::shared_ptr<HttpFilterBase>>>();
     for (auto filter : filters) {
@@ -515,8 +515,8 @@ std::string parseWebsockFrame(cnet::MsgBuffer *buffer) {
         size_t length = secondByte & 127;
         int isMasked = (secondByte & 0x80);
         if (isMasked != 0) {
-            LOG_TRACE << "data encoded!";
-        } else LOG_TRACE << "plain data";
+            LOG_DEBUG << "data encoded!";
+        } else LOG_DEBUG << "plain data";
         size_t indexFirstMask = 2;
 
         if (length == 126) {
@@ -528,8 +528,8 @@ std::string parseWebsockFrame(cnet::MsgBuffer *buffer) {
             if (indexFirstMask == 4) {
                 length = (unsigned char) (*buffer)[2];
                 length = (length << 8) + (unsigned char) (*buffer)[3];
-                LOG_TRACE << "bytes[2]=" << (unsigned char) (*buffer)[2];
-                LOG_TRACE << "bytes[3]=" << (unsigned char) (*buffer)[3];
+                LOG_DEBUG << "bytes[2]=" << (unsigned char) (*buffer)[2];
+                LOG_DEBUG << "bytes[3]=" << (unsigned char) (*buffer)[3];
             } else if (indexFirstMask == 10) {
                 length = (unsigned char) (*buffer)[2];
                 length = (length << 8) + (unsigned char) (*buffer)[3];
@@ -545,20 +545,20 @@ std::string parseWebsockFrame(cnet::MsgBuffer *buffer) {
                 assert(0);
             }
         }
-        LOG_TRACE << "websocket message len=" << length;
+        LOG_DEBUG << "websocket message len=" << length;
         if (buffer->readableBytes() >= (indexFirstMask + 4 + length)) {
             auto masks = buffer->peek() + indexFirstMask;
             int indexFirstDataByte = indexFirstMask + 4;
             auto rawData = buffer->peek() + indexFirstDataByte;
             std::string message;
             message.resize(length);
-            LOG_TRACE << "rawData[0]=" << (unsigned char) rawData[0];
-            LOG_TRACE << "masks[0]=" << (unsigned char) masks[0];
+            LOG_DEBUG << "rawData[0]=" << (unsigned char) rawData[0];
+            LOG_DEBUG << "masks[0]=" << (unsigned char) masks[0];
             for (size_t i = 0; i < length; i++) {
                 message[i] = (rawData[i] ^ masks[i % 4]);
             }
             buffer->retrieve(indexFirstMask + 4 + length);
-            LOG_TRACE << "got message len=" << message.length();
+            LOG_DEBUG << "got message len=" << message.length();
             return message;
         }
     }
@@ -573,7 +573,7 @@ void HttpAppImpl::onWebsockMessage(const WebSocketConnectionPtr &wsConnPtr,
     if (ctrl) {
         std::string message;
         while (!(message = parseWebsockFrame(buffer)).empty()) {
-            LOG_TRACE << "Got websock message:" << message;
+            LOG_DEBUG << "Got websock message:" << message;
             ctrl->handleNewMessage(wsConnPtr, std::move(message));
         }
     }
@@ -623,11 +623,11 @@ void HttpAppImpl::onNewWebsockRequest(const HttpRequestPtr &req,
 }
 
 void HttpAppImpl::onAsyncRequest(const HttpRequestPtr &req, const std::function<void(const HttpResponsePtr &)> &callback) {
-    LOG_TRACE << "new request:" << req->peerAddr().toIpPort() << "->" << req->localAddr().toIpPort();
-    LOG_TRACE << "Headers " << req->methodString() << " " << req->path();
+    LOG_DEBUG << "new request:" << req->peerAddr().toIpPort() << "->" << req->localAddr().toIpPort();
+    LOG_DEBUG << "Headers " << req->methodString() << " " << req->path();
 
-    LOG_TRACE << "http path=" << req->path();
-    // LOG_TRACE << "query: " << req->query() ;
+    LOG_DEBUG << "http path=" << req->path();
+    // LOG_DEBUG << "query: " << req->query() ;
 
     std::string session_id = req->getCookie("JSESSIONID");
     bool needSetJsessionid = false;
@@ -680,9 +680,9 @@ void HttpAppImpl::onAsyncRequest(const HttpRequestPtr &req, const std::function<
                     }
                 } else {
                     struct stat fileStat;
-                    LOG_TRACE << "enabled LastModify";
+                    LOG_DEBUG << "enabled LastModify";
                     if (stat(filePath.c_str(), &fileStat) >= 0) {
-                        LOG_TRACE << "last modify time:" << fileStat.st_mtime;
+                        LOG_DEBUG << "last modify time:" << fileStat.st_mtime;
                         struct tm tm1;
                         gmtime_r(&fileStat.st_mtime, &tm1);
                         std::string timeStr;
@@ -691,7 +691,7 @@ void HttpAppImpl::onAsyncRequest(const HttpRequestPtr &req, const std::function<
                         timeStr.resize(len);
                         std::string modiStr = req->getHeader("If-Modified-Since");
                         if (modiStr == timeStr && !modiStr.empty()) {
-                            LOG_TRACE << "not Modified!";
+                            LOG_DEBUG << "not Modified!";
                             resp->setStatusCode(HttpResponse::k304NotModified);
                             if (needSetJsessionid) {
                                 resp->addCookie("JSESSIONID", session_id);
@@ -817,7 +817,7 @@ void HttpAppImpl::onAsyncRequest(const HttpRequestPtr &req, const std::function<
             if (controller) {
                 if (responsePtr) {
                     //use cached response!
-                    LOG_TRACE << "Use cached response";
+                    LOG_DEBUG << "Use cached response";
                     if (!needSetJsessionid)
                         callback(responsePtr);
                     else {
@@ -872,7 +872,7 @@ void HttpAppImpl::onAsyncRequest(const HttpRequestPtr &req, const std::function<
                 if (result[i].str() == req->path() && i <= _ctrlVector.size()) {
                     size_t ctlIndex = i - 1;
                     auto &binder = _ctrlVector[ctlIndex];
-                    //LOG_TRACE << "got http access,regex=" << binder.pathParameterPattern;
+                    //LOG_DEBUG << "got http access,regex=" << binder.pathParameterPattern;
                     if (binder._validMethodsFlags.size() > 0) {
                         assert(binder._validMethodsFlags.size() > req->method());
                         if (binder._validMethodsFlags[req->method()] == 0) {
@@ -894,7 +894,7 @@ void HttpAppImpl::onAsyncRequest(const HttpRequestPtr &req, const std::function<
                         }
                         if (responsePtr) {
                             //use cached response!
-                            LOG_TRACE << "Use cached response";
+                            LOG_DEBUG << "Use cached response";
 
                             if (!needSetJsessionid)
                                 callback(responsePtr);
@@ -917,7 +917,7 @@ void HttpAppImpl::onAsyncRequest(const HttpRequestPtr &req, const std::function<
                                 if (place > params.size())
                                     params.resize(place);
                                 params[place - 1] = r[j].str();
-                                LOG_TRACE << "place=" << place << " para:" << params[place - 1];
+                                LOG_DEBUG << "place=" << place << " para:" << params[place - 1];
                             }
                         }
                         if (binder.queryParametersPlaces.size() > 0) {
@@ -934,12 +934,12 @@ void HttpAppImpl::onAsyncRequest(const HttpRequestPtr &req, const std::function<
                         }
                         std::list<std::string> paraList;
                         for (auto p : params) {
-                            LOG_TRACE << p;
+                            LOG_DEBUG << p;
                             paraList.push_back(std::move(p));
                         }
 
                         binder.binderPtr->handleHttpRequest(paraList, req, [=](const HttpResponsePtr &resp) {
-                            LOG_TRACE << "http resp:needSetJsessionid=" << needSetJsessionid << ";JSESSIONID="
+                            LOG_DEBUG << "http resp:needSetJsessionid=" << needSetJsessionid << ";JSESSIONID="
                                       << session_id;
                             auto newResp = resp;
                             if (resp->expiredTime() >= 0) {
@@ -987,7 +987,7 @@ void HttpAppImpl::onAsyncRequest(const HttpRequestPtr &req, const std::function<
 
 void HttpAppImpl::readSendFile(const std::string &filePath, const HttpRequestPtr &req, const HttpResponsePtr &resp) {
     std::ifstream infile(filePath, std::ifstream::binary);
-    LOG_TRACE << "send http file:" << filePath;
+    LOG_DEBUG << "send http file:" << filePath;
     if (!infile) {
 
         resp->setStatusCode(HttpResponse::k404NotFound);
@@ -1000,9 +1000,7 @@ void HttpAppImpl::readSendFile(const std::string &filePath, const HttpRequestPtr
     pbuf->pubseekoff(0, infile.beg); // rewind
 
     if (_useSendfile &&
-        filesize > 1024 * 200)
-        //FIXME : Is 200k an appropriate value? Or set it to be configurable
-    {
+        filesize > 1024 * 200) {
         //The advantages of sendfile() can only be reflected in sending large files.
         std::dynamic_pointer_cast<HttpResponseImpl>(resp)->setSendfile(filePath);
     } else {

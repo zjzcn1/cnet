@@ -38,10 +38,6 @@ namespace cnet {
 
         static std::string urlDecode(const std::string &szToDecode);
 
-        static int gzipCompress(const char *data, size_t ndata, char *zdata, size_t *nzdata);
-
-        static int gzipDecompress(const char *zdata, size_t nzdata, char *data, size_t *ndata);
-
         static char *getHttpFullDate(const cnet::Date &date);
 
         static std::string formattedString(const char *format, ...);

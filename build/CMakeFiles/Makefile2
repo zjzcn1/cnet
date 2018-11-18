@@ -65,6 +65,43 @@ CMAKE_SOURCE_DIR = /Users/zjz/work/cpp/cnet
 CMAKE_BINARY_DIR = /Users/zjz/work/cpp/cnet/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/http_server.dir
+
+# All Build rule for target.
+CMakeFiles/http_server.dir/all: CMakeFiles/cnet.dir/all
+	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/depend
+	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/zjz/work/cpp/cnet/build/CMakeFiles --progress-num=41,42 "Built target http_server"
+.PHONY : CMakeFiles/http_server.dir/all
+
+# Include target in all.
+all: CMakeFiles/http_server.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/http_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zjz/work/cpp/cnet/build/CMakeFiles 42
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/http_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zjz/work/cpp/cnet/build/CMakeFiles 0
+.PHONY : CMakeFiles/http_server.dir/rule
+
+# Convenience name for target.
+http_server: CMakeFiles/http_server.dir/rule
+
+.PHONY : http_server
+
+# clean rule for target.
+CMakeFiles/http_server.dir/clean:
+	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/clean
+.PHONY : CMakeFiles/http_server.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/http_server.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/cnet.dir
 
 # All Build rule for target.
