@@ -1,0 +1,14 @@
+*.settings
+*.classpath
+*.project
+*.class
+*.log
+*.DS_Store
+*.iml
+
+/target/
+/logs/
+/.idea/
+*/target/
+node_modules/
+npm-debug.log

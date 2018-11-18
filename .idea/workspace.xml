@@ -12,70 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57cb9540-3450-4017-ab08-0094425d9e38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/14" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/15" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/16" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/18" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/20" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/21" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/22" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/23" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/24" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/25" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/26" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/27" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/28" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/29" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/30" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/31" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/32" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/33" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/34" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/35" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/36" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/37" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/38" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/39" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/40" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/cnet.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/cnet.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/cnet.dir/src/http/HttpAppImpl.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/cnet.dir/src/http/HttpAppImpl.cc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/cnet.dir/src/http/HttpServer.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/cnet.dir/src/http/HttpServer.cc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/cnet.dir/src/http/HttpUtils.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/cnet.dir/src/http/HttpUtils.cc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/cnet.dir/src/tcp/TcpServer.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/cnet.dir/src/tcp/TcpServer.cc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/HttpMain.cc" beforeDir="false" afterPath="$PROJECT_DIR$/examples/HttpMain.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/cnet/http/HttpApp.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/cnet/http/HttpApp.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/HttpAppImpl.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/HttpAppImpl.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/HttpAppImpl.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/HttpAppImpl.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/HttpServer.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/HttpServer.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/HttpUtils.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/HttpUtils.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/HttpUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/HttpUtils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcp/TcpServer.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcp/TcpServer.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Logger.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Logger.cc" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -100,6 +39,7 @@
         <counts>
           <entry key="any" value="1" />
           <entry key="cc" value="44" />
+          <entry key="gitignore" value="1" />
           <entry key="h" value="58" />
           <entry key="hpp" value="2" />
           <entry key="string" value="1" />
@@ -110,6 +50,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="7" />
           <entry key="ObjectiveC" value="106" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -129,14 +70,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/HttpMain.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            <state relative-caret-position="165">
+              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -148,18 +98,6 @@
               <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#14#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/cnet/http/HttpRequest.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-              <folding>
-                <element signature="e#244#274#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -304,7 +242,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/cnet/http/Utils.h" />
         <option value="$PROJECT_DIR$/src/cnet/http/FileUpload.cc" />
         <option value="$PROJECT_DIR$/include/cnet/http/HttpResponse.h" />
         <option value="$PROJECT_DIR$/include/cnet/http/HttpRequest.h" />
@@ -355,6 +292,7 @@
         <option value="$PROJECT_DIR$/src/http/HttpServer.cc" />
         <option value="$PROJECT_DIR$/src/http/HttpAppImpl.cc" />
         <option value="$PROJECT_DIR$/examples/HttpMain.cc" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -454,12 +392,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542460785983</updated>
-      <workItem from="1542461559205" duration="20434000" />
+      <workItem from="1542461559205" duration="20923000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20434000" />
+    <option name="totallyTimeSpent" value="20923000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -485,7 +423,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32968536" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.2653899" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2653899" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.32968536" />
@@ -502,9 +440,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cnet/http/SharedLibManager.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/http/WebSockectConnectionImpl.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -894,11 +829,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/HttpMain.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        <state relative-caret-position="165">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>

@@ -8,7 +8,7 @@ using namespace cnet;
 class Test : public HttpController<Test> {
 public:
     METHOD_LIST_BEGIN
-        METHOD_ADD(Test::get, "/get", Get); //path will be /api/v1/test/get/{arg2}/{arg1}
+        METHOD_ADD(Test::get, "/get", Get); //http://127.0.0.1:8080/Test/get
     METHOD_LIST_END
 
     void get(const HttpRequestPtr &req, const std::function<void(const HttpResponsePtr &)> &callback, int p1, int p2) const {
